@@ -1,16 +1,15 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-
 @Component
-public class HpPrinter implements Printer{
+public class HpPrinter implements Printer, InitializingBean {
 
     private int count;
 
-    @PostConstruct
-    public void initialize() {
+    @Override
+    public void afterPropertiesSet() throws Exception {
         count = 5;
     }
 
