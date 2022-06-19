@@ -1,18 +1,19 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/detail")
 @RestController
 public class MyController {
 
-    @Autowired
-    private Printer printer;
+    @RequestMapping("/product")
+    public String product() {
+        return "1.Apple 2.Orange";
+    }
 
-    @RequestMapping("/test")
-    public String test() {
-        printer.print("Hi printer");
-        return "Hello World";
+    @RequestMapping("/user")
+    public String user() {
+        return "Name is Sunny";
     }
 }
